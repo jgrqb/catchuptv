@@ -19,7 +19,8 @@ URL_ROOT = 'https://www.qu4tre.be'
 
 URL_LIVE = URL_ROOT + '/direct'
 
-URL_PLAYER = 'https://tvlocales-player.freecaster.com/embed/%s.json'
+URL_PLAYER = 'https://tvlocales-player.freecaster.com/freecaster/stable/fcplayer.js'
+# ancienne adresse : 'https://tvlocales-player.freecaster.com/embed/%s.json'
 
 URL_VIDEOS = URL_ROOT + '/videos'
 
