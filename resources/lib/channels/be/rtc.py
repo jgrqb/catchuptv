@@ -15,9 +15,9 @@ from codequick import Listitem, Resolver, Route
 from resources.lib import resolver_proxy, web_utils, download
 from resources.lib.menu_utils import item_post_treatment
 
-URL_ROOT = 'https://www.rtc.be'
+URL_ROOT = 'https://www.qu4tre.be/'
 
-URL_LIVE = URL_ROOT + '/live'
+URL_LIVE = URL_ROOT + '/direct'
 
 URL_PLAYER = 'https://tvlocales-player.freecaster.com/embed/%s.json'
 
