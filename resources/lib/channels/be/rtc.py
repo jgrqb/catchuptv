@@ -59,7 +59,7 @@ def list_programs(plugin, item_id, **kwargs):
     resp = urlquick.get(URL_EMISSIONS, headers=GENERIC_HEADERS, max_age=-1)
     root = resp.parse()
 
-    for program_datas in root.iterfind(".//div[@class='col-sm-4']"):
+    for program_datas in root.iterfind(".//div[@class='col-md-4']"):
         program_title = program_datas.find('.//h3').text
         program_image = program_datas.find('.//img').get('src')
         program_image = append_schema(program_image)
@@ -88,7 +88,7 @@ def list_videos(plugin, item_id, next_url, page, **kwargs):
     resp = urlquick.get(next_url + '?lim_un=%s' % page, headers=GENERIC_HEADERS, max_age=-1)
     root = resp.parse()
 
-    for video_datas in root.iterfind(".//div[@class='col-sm-4']"):
+    for video_datas in root.iterfind(".//div[@class='col-md-4']"):
         video_title = video_datas.find('.//h3').text
         video_image = video_datas.find('.//img').get('src')
         video_image = append_schema(video_image)
