@@ -119,7 +119,7 @@ def get_video_url(plugin,
     resp = urlquick.get(video_url, headers=GENERIC_HEADERS, max_age=-1)
     root = resp.parse()
 
-    video_data = root.findall(".//div[@class='freecaster-player']")[0].get('data-fc-token')
+    video_data = root.findall(".//div[@class='fcplayer']")[0].get('data-fc-token')
     resp = urlquick.get(URL_PLAYER % video_data, headers=GENERIC_HEADERS, max_age=-1)
     json_data = json.loads(resp.text)
     video_url = json_data['video']['src'][0]['src']
@@ -138,7 +138,7 @@ def get_live_url(plugin, item_id, **kwargs):
     resp = urlquick.get(URL_LIVE, headers=GENERIC_HEADERS, max_age=-1)
     root = resp.parse()
 
-    live_data = root.findall(".//div[@class='freecaster-player']")[0].get('data-video-id')
+    live_data = root.findall(".//div[@class='fcplayer']")[0].get('data-video-id')
     resp = urlquick.get(URL_PLAYER % live_data, headers=GENERIC_HEADERS, max_age=-1)
     video_url = json.loads(resp.text)['video']['src'][0]['src']
 
